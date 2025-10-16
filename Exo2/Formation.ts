@@ -1,5 +1,7 @@
-import { Stagiaire } from "./Stagiaire.js";
-class Formation {
+import { Stagiaire } from "./stagiaire.js";
+export class Formation {
+
+    
     //attributs
     private _intitule: string;
     private _nbrjour : number;
