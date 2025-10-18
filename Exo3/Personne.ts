@@ -21,11 +21,11 @@ export class personne{
         return this._sexe;
     }
     get adresse():adresse[] {
-        return this._adresse;
+        return this.adresse;
     }
     
     set nom(nom:string){
-        this._nom= nom ;
+        this.nom= nom ;
     }
     set sexe(sexe:string){
         if (sexe !== 'M' && sexe !== 'F'){
