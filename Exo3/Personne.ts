@@ -1,4 +1,4 @@
-import { adresse } from "./Exo3/Adresse";
+import { adresse } from "./Adresse";
 
 export class personne{
     private _nom:string;
