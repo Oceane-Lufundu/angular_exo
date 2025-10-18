@@ -1,9 +1,11 @@
 export class adresse{
     
+    //attribut
     private rue:string;
     private codePostal:string;
     private ville:string;
     
+    //constructeur
     constructor(rue:string, codePostal:string, ville:string){
         this.rue=rue;
         this.codePostal=codePostal;

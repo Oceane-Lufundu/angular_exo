@@ -81,13 +81,13 @@ export class Formation {
 }
 
 //methode qui affiche la moyenne du premier stagiaire dont le nom est passé en paramètre.
-public trouverMoyenneParNom(nom:string): void{
-    const stagiaireTrouve = this._Stagiaire.find(stagiaire =>stagiaire.nom.toLowerCase());
-        if (stagiaireTrouve){
-            console.log(`La moyenne de ${nom}est :  ${stagiaireTrouve.calculerMoyenne().toFixed(2)}`);
+    public trouverMoyenneParNom(nom:string): void{
+        const stagiaireTrouve = this._Stagiaire.find(stagiaire =>stagiaire.nom.toLowerCase());
+            if (stagiaireTrouve){
+                console.log(`La moyenne de ${nom}est :  ${stagiaireTrouve.calculerMoyenne().toFixed(2)}`);
+            }
+        else{
+            console.log(`Le stagiaire ${nom}est introuvable`);
         }
-    else{
-        console.log(`Le stagiaire ${nom}est introuvable`);
     }
-}
 }

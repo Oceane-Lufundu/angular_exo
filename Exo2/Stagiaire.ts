@@ -41,5 +41,3 @@ export class Stagiaire {
             return Math.min(...this.notes);
         }
 }
-
-

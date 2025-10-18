@@ -1,11 +1,15 @@
 import { personne } from "./Personne";
 export class ListePersonne{
 
+    //attribut
     private _personnes:personne[];
 
+    //constructeur
     constructor(personnes:personne[]=[]){
         this._personnes=personnes;
     }
+
+    //getters et setters
     get personnes():personne[]{
         return this._personnes;
     }
@@ -13,6 +17,7 @@ export class ListePersonne{
         this._personnes=personnes;
     }
 
+    //methodes
     public ajouterPersonne(unePersonne:personne):void{
         this._personnes.push (unePersonne);
     }

@@ -1,6 +1,6 @@
 import { adresse } from "./Adresse";
-
 export class personne{
+
     //attribut
     private _nom:string;
     private _sexe:string;
@@ -15,7 +15,7 @@ export class personne{
     
     //getters et setters
     get nom():string{
-            return this.nom;
+        return this.nom;
     }
     get sexe():string{
         return this._sexe;
@@ -27,24 +27,23 @@ export class personne{
     set nom(nom:string){
         this._nom= nom ;
     }
-
     set sexe(sexe:string){
         if (sexe !== 'M' && sexe !== 'F'){
             throw new Error("Le sexe doit être 'M' ou 'F'");
         }
         this._sexe=sexe;
     }
-
     set adresse(adresse: adresse[]){
         this.adresse= adresse;
     }
 
     //methodes
-    public ajouterAdresse(uneAdresse: Adresse):void{
+    public ajouterAdresse(uneAdresse: adresse):void{
         this.adresse.push(uneAdresse);
     }
 
     public getInfoComplete():string{
         const adresseStr = this.adresse.map(adresse => this.adresse.getAdresseComplete()).join(' | ');
+        return `Nom: ${this._nom}, Sexe: ${this._sexe}, Adresses: [${adresseStr}]`;
     }
 }

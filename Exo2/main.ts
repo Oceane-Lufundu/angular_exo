@@ -12,22 +12,22 @@ public static main():void{
         const stagiaire5=new Stagiaire("Eve",[11,12,10]);
 
         //creation de la formation
-        const listeStagiaires: Stagiaire[]=[stagiaire1,stagiaire2,stagiaire3,stagiaire4,stagiaire5];
+        const listeStagiaires: Stagiaire[]=[stagiaire1,stagiaire2,stagiaire3];
         const formation=new Formation("TypeScript",90,listeStagiaires);
 
-        //affichager resultat
+        //affichager resultats
         console.log("\n: INFORMATION GENERALES :");
         console.log(`Formation: ${formation.intitule}`);
-        console.log(`Durée ${formation.nbrjour}jours`);
+        console.log(`Durée ${formation.nbrjour} jours`);
         console.log(`Nombre de stagiaire : ${formation.Stagiaire.length}`);
 
         console.log("\n: STATISTIQUE :");
-        console.log(`La moyenne de la formation est : ${formation.calculerMoyenneFormation().toFi}`);
+        console.log(`Moyenne de la formation: ${formation.calculeMoyenneFormation().toFixed(2)}`);
 
         formation.Stagiaire.forEach((_stagiaire, index) => {
-            console.log(`${index + 1}. ${_stagiaire.nom} - Notes: ${_stagiaire.notes.join(", ")} - Moyenne: ${_stagiaire.calculerMoyenne().toFixed(2)}`);
+            console.log(`${index + 1}. ${_stagiaire.nom} - Notes: ${_stagiaire.notes.join(", ")} - Moyenne: ${_stagiaire.calculerMoyenne().toFixed(2)}`);});
+    }
 }
-}
 
 
 
@@ -39,15 +39,3 @@ public static main():void{
 
 
 
-
-/*// Afficher la moyenne de la formation
-console.log(`La moyenne de la formation est : ${formation.calculerMoyenneFormation()}`);
-// Afficher le nom du stagiaire avec la moyenne la plus élevée
-console.log(`Le stagiaire avec la moyenne la plus élevée est : ${formation.afficherNomMax()}`);
-// Afficher le nom du stagiaire avec la note minimale et maximale
-console.log(formation.afficherMinMax());
-// Trouver la moyenne d'un stagiaire par son nom
-console.log(`La moyenne de Bob est : ${formation.trouverMoyenneParNom("Bob")}`);
-// Essayer de trouver la moyenne d'un stagiaire qui n'existe pas
-console.log(formation.trouverMoyenneParNom("Zoe"));*/
-}
