@@ -1,38 +1,50 @@
 import { adresse } from "./Adresse";
 
 export class personne{
+    //attribut
     private _nom:string;
     private _sexe:string;
     private _adresse:adresse;
-    
-    constructor(nom:string, sexe:string, adresse:string){
+
+    //constructeur
+    constructor(nom:string, sexe:string, adresse: adresse){
         this._nom=nom;
         this._sexe=sexe;
         this._adresse=adresse;
     }
+    
+    //getters et setters
     get nom():string{
-        return this.nom;
+            return this.nom;
     }
-    get CodePostal():string{
-        return this.codePostal;
+    get sexe():string{
+        return this._sexe;
     }
-    getVille():string{
-        return this.ville;
+    get adresse():adresse[] {
+        return this._adresse;
     }
-    setRue(rue:string):void{
-        this.rue=rue;
-    }
-    setCodePostal(codePostal:string):void{
-        this.codePostal=codePostal;
-    }
-    setVille(ville:string):void{
-        this.ville=ville;
+    
+    set nom(nom:string){
+        this._nom= nom ;
     }
 
-    public ajouterAdresse(rue:string, codePostal:string, ville:string):void{
-        this._adresse.push (uneAdresse);
+    set sexe(sexe:string){
+        if (sexe !== 'M' && sexe !== 'F'){
+            throw new Error("Le sexe doit être 'M' ou 'F'");
+        }
+        this._sexe=sexe;
+    }
+
+    set adresse(adresse: adresse[]){
+        this.adresse= adresse;
+    }
+
+    //methodes
+    public ajouterAdresse(uneAdresse: Adresse):void{
+        this.adresse.push(uneAdresse);
     }
 
     public getInfoComplete():string{
-        const adresseStr = this._adresse.map(adresse => `${adresse.getRue()}, ${adresse.getCodePostal()}, ${adresse.getVille()}`).join(' | ');
+        const adresseStr = this.adresse.map(adresse => this.adresse.getAdresseComplete()).join(' | ');
+    }
 }
